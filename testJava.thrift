@@ -1,3 +1,11 @@
+// 包含头文件
+// include “shared.thrift”        
+
+
+// 指定目标语言
+// namespace cpp tutorial
+// namespace cpp com.example.project 
+// namespace java com.example.project
 namespace java com.javabloger.gen.code   # 注释1   定义生成代码的命名空间，与你需要定义的package相对应。
 
 struct Blog {   #  注释2.1   定义实体名称和数据结构，类似你业务逻辑中的pojo get/set
@@ -8,6 +16,21 @@ struct Blog {   #  注释2.1   定义实体名称和数据结构，类似你业�
 	5: string ipAddress
 	6: map<string,string> props
 }
+
+enum TweetType { 
+	TWEET,         // 编译器默认从1开始赋值
+	RETWEET = 2,  // 可以赋予某个常量某个整数
+	DM = 0xa,     //允许常量是十六进制整数
+	REPLY         // 末尾没有逗号
+} 
+
+// 定义变量
+// const i32 INT32CONSTANT = 9853
+
+const i32 INT_CONST = 1234;    // 分号是可选的
+const map<string,string> MAP_CONST = {"hello": "world", "goodnight": "moon"}
+
+typedef i32 MyInteger 
 
 exception TwitterUnavailable {
     1: string message;

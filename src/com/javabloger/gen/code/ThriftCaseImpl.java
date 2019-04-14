@@ -37,4 +37,10 @@ public class ThriftCaseImpl implements ThriftCase.Iface{
 		return null;
 	}
 
+	@Override
+	public void loginTwiiter(String id) throws TwitterUnavailable, TException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
